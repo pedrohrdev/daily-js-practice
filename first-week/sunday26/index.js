@@ -70,4 +70,4 @@ const total = grades.reduce( (acc, grade) => {
 
 const average = total / grades.length;
 
-console.log(`Average: ${average.toFixed(2)}`)
+console.log(`Average: ${average.toFixed(2)}`);
