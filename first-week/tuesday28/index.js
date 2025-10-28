@@ -10,6 +10,7 @@
 
 */
 
+
 // =================================== DESTRUCTURING in Arrays ==============================================
 
 
@@ -28,7 +29,7 @@ const [a = 5, b = 5, c = 5] = nums; // <-- It is possible to pass default values
 
 const [x, , z] = nums; // <-- It is possible to skip a value if you do not want to assign it to a variable.
 
-console.log(x, z)
+// console.log(x, z)
 
 
 
@@ -48,10 +49,49 @@ const person = {
 
 const { name, age } = person;
 
-console.log(name, age);
+//console.log(name, age);
 
 const { city: local} = person;
 
-console.log(local);
+//console.log(local);
 
 // ========================================================================================================== //
+
+
+
+// =================================== REST OPERATOR ============================================= //
+
+/*
+
+    Rest operator -> we use it when we want to get the rest of an object;
+
+    Supondo que queromos pegar tudo que nao for o objeto adress,
+    usamos o rest para falar que queremos o adress, e resto va para
+    outra variavel no caso a varialvel userWithoutAddress
+
+*/
+
+const user = [
+
+    {
+        name: "Pedro Rossi",
+        age: 15,
+        email: "pedrohrdev@gmail.com",
+
+        adress: {
+            
+            street: "123 Main st",
+            city: "Chique Chique",
+            state: "Piauí",
+        
+        }
+
+    }
+];
+
+
+const usingRest = user.map( ({adress, ...userWithoutAddress}) => {
+    return userWithoutAddress
+} );
+
+// console.log(usingRest)
