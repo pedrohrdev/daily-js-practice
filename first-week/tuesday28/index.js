@@ -6,7 +6,7 @@
         
         2 - Learn spred/rest operators;
 
-            2.1 - Make a function that returns any number of arguments (rest);
+            2.1 - Create a function that adds any number of arguments (rest);;
 
 */
 
@@ -114,7 +114,7 @@ function sum(a, b, c) {
 
 const nums2 = [1, 2, 3];
 
-console.log(sum(...nums2))
+//console.log(sum(...nums2))
 
 /* */
 const firstObj = { a: 1, b: 2 };
@@ -126,7 +126,51 @@ const newObj = {firstObj, secondObj}; // This way we would create a new object w
 // inside again, thus creating a single object with the two previous ones
 const newObjSpread = {...firstObj, ...secondObj} 
 
-console.log(newObjSpread);
+//console.log(newObjSpread);
 
 // ========================================================================================================== //
 
+
+
+
+// ========================= Create a function that adds any number of arguments (rest); ===================== //;
+
+const nums3 = [
+    {
+        numberRest1: 1,
+        numberRest2: 2,
+        numberRest3: 3,
+
+        numbersOfSum: {
+            n1: 5,
+            n2: 10,
+            n3: 15
+        }
+
+    }
+
+]
+
+const SumofAnyArgumentNumber = (...numbersToAdd) => {
+
+    return numbersToAdd.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+};
+
+const results = nums3.map(item => {
+
+    const restNumbers = [item.numberRest1, item.numberRest2, item.numberRest3];
+
+    const sumNumbers = Object.values(item.numbersOfSum);
+
+    const allNumbers = [...restNumbers, ...sumNumbers];
+
+    const totalSum = SumofAnyArgumentNumber(...allNumbers);
+
+    return {
+        allNumbers,
+        totalSum,
+        originalItem: item
+    };
+});
+
+console.log(results);
