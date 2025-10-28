@@ -40,30 +40,18 @@ console.log(x, z)
 
 // =================================== DESTRUCTURING in Objects ============================================= //
 
-
-
 const person = {
-
-name: "Pedro",
-
-age: 15,
-
-city: "NewYork",
-
+    name: "Pedro",
+    age: 15,
+    city: "NewYork",
 };
-
-
 
 const { name, age } = person;
 
-console.log(name, age)
-
-
+console.log(name, age);
 
 const { city: local} = person;
 
 console.log(local);
-
-
 
 // ========================================================================================================== //
