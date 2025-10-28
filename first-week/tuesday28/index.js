@@ -95,3 +95,38 @@ const usingRest = user.map( ({adress, ...userWithoutAddress}) => {
 } );
 
 // console.log(usingRest)
+
+// ========================================================================================================== //
+
+
+// ===================================== SPREAD OPERATOR ======================================================= //
+
+/*
+    To make each element of the array be used individually by the function,
+    we use the spread, if we don't use the spread the code only understands
+    that the array is a parameter, with the "..." the code understands that
+    it is to make each element be used
+*/
+
+function sum(a, b, c) {
+    return a + b + c;
+};
+
+const nums2 = [1, 2, 3];
+
+console.log(sum(...nums2))
+
+/* */
+const firstObj = { a: 1, b: 2 };
+const secondObj = {c: 3};
+
+const newObj = {firstObj, secondObj}; // This way we would create a new object with both objects inside.
+
+// Using the spread ' ... ', we spread the elements and combine the two
+// inside again, thus creating a single object with the two previous ones
+const newObjSpread = {...firstObj, ...secondObj} 
+
+console.log(newObjSpread);
+
+// ========================================================================================================== //
+
