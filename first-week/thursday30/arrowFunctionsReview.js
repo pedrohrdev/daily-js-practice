@@ -8,3 +8,15 @@ function sum(a, b) {
 
 // Same logic with an arrow function:
 const sumArrow = (a, b) => a + b;
+
+// 2 - Arrow Functions in Array Methods
+
+// Traditional way:
+const doubledTraditional = numbers.map(function (num) {
+  return num * 2;
+});
+
+// Modern way:
+const doubledArrow = numbers.map(num => num * 2);
+
+console.log(doubledArrow); // [2, 4, 6, 8, 10]
